@@ -1,0 +1,153 @@
+{
+  "project_name": "ForgeQuant-Lab",
+  "design_philosophy": {
+    "identity": "The Anti-AI Designer (E1)",
+    "core_principles": [
+      "Fusion over Imitation: Mix Bloomberg Terminal density with Sci-Fi HUD aesthetics.",
+      "Emotion First: Evoke 'Precision' and 'Authority'. The user is a commander of capital.",
+      "Content is King: Data density is the feature. Every pixel must communicate value.",
+      "Negative Space: Use it structurally to separate dense data clusters, not for 'airiness'.",
+      "Contrast: High contrast for data legibility (Neon on Dark). Low contrast for structural containers."
+    ],
+    "anti_patterns": [
+      "No generic 'Inter' everywhere. Use distinctive fonts.",
+      "No purple/teal gradients for CTAs. Use sharp, functional colors.",
+      "No centered layouts. Asymmetry creates tension and guides the eye.",
+      "No rounded corners > 8px. This is a precision tool, not a toy."
+    ]
+  },
+  "typography": {
+    "font_family": {
+      "headings": "Chivo, sans-serif",
+      "body": "Manrope, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "scale": {
+      "h1": "text-4xl font-black tracking-tight",
+      "h2": "text-3xl font-bold tracking-tight",
+      "h3": "text-2xl font-bold",
+      "body": "text-sm font-medium leading-relaxed",
+      "mono_lg": "text-lg font-mono tracking-wide",
+      "mono_sm": "text-xs font-mono tracking-wide"
+    },
+    "installation_command": "yarn add @fontsource/chivo @fontsource/manrope @fontsource/jetbrains-mono"
+  },
+  "colors": {
+    "theme": "dark",
+    "palette": {
+      "background": {
+        "default": "#0b0e14",
+        "surface": "#151921",
+        "overlay": "rgba(11, 14, 20, 0.85)"
+      },
+      "foreground": {
+        "default": "#f8fafc",
+        "muted": "#94a3b8",
+        "dim": "#64748b"
+      },
+      "border": {
+        "default": "#2a2f3a",
+        "active": "#3b82f6"
+      },
+      "brand": {
+        "primary": "#3b82f6",
+        "secondary": "#6366f1",
+        "accent": "#f59e0b"
+      },
+      "functional": {
+        "bullish": "#10b981",
+        "bearish": "#ef4444",
+        "warning": "#f59e0b",
+        "info": "#06b6d4"
+      }
+    },
+    "rules": [
+      "Never use pure black (#000000). Use #0b0e14 for depth.",
+      "Data colors (Green/Red) must be neon/bright to pop against the dark background.",
+      "Borders should be subtle (#2a2f3a) unless active/focused."
+    ]
+  },
+  "layout": {
+    "grid_system": "Bento Grid Mode B (High Density)",
+    "spacing": {
+      "container_padding": "p-6",
+      "gap": "gap-4",
+      "internal_padding": "p-4"
+    },
+    "containers": {
+      "dashboard_card": "bg-[#151921] border border-[#2a2f3a] rounded-sm",
+      "panel": "h-full w-full overflow-hidden flex flex-col"
+    },
+    "alignment": "Left-aligned text. Right-aligned numbers/monetary values."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-white hover:bg-primary/90 rounded-sm shadow-none font-bold uppercase tracking-wider text-xs px-6 py-2",
+      "secondary": "bg-transparent border border-border text-foreground hover:bg-accent hover:text-white rounded-sm",
+      "destructive": "bg-red-900/20 text-red-500 border border-red-900/50 hover:bg-red-900/40 rounded-sm"
+    },
+    "inputs": {
+      "default": "bg-[#0b0e14] border-border focus:border-primary rounded-sm font-mono text-sm h-9"
+    },
+    "cards": {
+      "metric": "p-4 flex flex-col justify-between h-32 border-l-4 border-l-primary bg-[#151921]"
+    },
+    "charts": {
+      "library": "recharts",
+      "style": "Minimalist. Remove grid lines or make them extremely subtle (#2a2f3a). Use tooltip with backdrop-blur.",
+      "colors": ["#3b82f6", "#10b981", "#ef4444", "#f59e0b", "#8b5cf6"]
+    },
+    "tables": {
+      "style": "Dense. Row height 32px. Header uppercase text-xs text-muted-foreground. Font-mono for all cell data.",
+      "row_hover": "hover:bg-white/5"
+    }
+  },
+  "visual_enhancers": {
+    "textures": "Subtle noise overlay (opacity 0.02) on the main background to reduce digital flatness.",
+    "borders": "1px solid borders with 10% opacity. Use 'tracing beam' effect for active cards.",
+    "shadows": "None. Flat, layer-based hierarchy.",
+    "motion": "Micro-interactions only. 0.1s ease-out for hover. No long transitions."
+  },
+  "assets": {
+    "icons": {
+      "library": "lucide-react",
+      "style": "Stroke width 1.5px. Small sizes (w-4 h-4)."
+    },
+    "images": {
+      "login_background": "https://images.unsplash.com/photo-1765445666518-0140e26ae920?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRhcmslMjBjeWJlciUyMEhVRCUyMGRhdGElMjB2aXN1YWxpemF0aW9uJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3NzIxMzQ0MjZ8MA&ixlib=rb-4.1.0&q=85",
+      "logo_placeholder": "Use text 'ForgeQuant-Lab' in Chivo font, bold, tracking-tighter."
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. INSTALL FONTS: Run `yarn add @fontsource/chivo @fontsource/manrope @fontsource/jetbrains-mono` immediately.",
+    "2. SETUP TAILWIND: Update `tailwind.config.js` to extend the font family and colors as defined in this JSON.",
+    "3. GLOBAL CSS: Update `index.css` to set the base background color to #0b0e14 and apply the noise texture if possible.",
+    "4. COMPONENT OVERRIDES: When using Shadcn components, override the 'rounded-md' class to 'rounded-sm' or 'rounded-none' to match the sharp terminal aesthetic.",
+    "5. CHARTS: Ensure Recharts are responsive. Use `ResponsiveContainer`. Customize the `Tooltip` to use a dark glassmorphism style.",
+    "6. DATA-TESTID: Add `data-testid` to all interactive elements (buttons, inputs, grid items).",
+    "7. LAYOUT: Use `grid-cols-12` for the main dashboard. Sidebar should be `col-span-2` or `col-span-1` (collapsible icon rail). Main content `col-span-10` or `col-span-11`.",
+    "8. ERROR HANDLING: If a chart has no data, show a 'No Data' state with a technical icon (e.g., `Activity` from lucide-react) and a helpful message.",
+    "9. FRANKENSTEIN MONITOR: Use the 'Abstract Glitch' image as a subtle background or header for this specific page to reinforce the 'unstable' theme."
+  ],
+  "universal_guidelines": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms.",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN.",
+    "Prioritize using pre-existing components from src/components/ui when applicable.",
+    "Create new components that match the style and conventions of existing components when needed.",
+    "Examine existing components to understand the project's component patterns before creating new ones.",
+    "Components MUST use named exports (export const ComponentName = ...).",
+    "Pages MUST use default exports (export default function PageName() {...}).",
+    "Use sonner for toasts. Sonner component are located in /app/src/components/ui/sonner.tsx."
+  ]
+}
